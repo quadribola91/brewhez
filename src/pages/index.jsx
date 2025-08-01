@@ -1,12 +1,13 @@
-import Home from "@/Components/Home/container/Homecontainer";
 import React from "react";
+import Homecontainer from "../Components/Home/container/Homecontainer";
+import MainLayout from "../layouts/MainLayout";
 
-const index = () => {
+const Home = () => {
   return (
-    <div>
-      <Home />
-    </div>
+    <MainLayout>
+      <Homecontainer />
+    </MainLayout>
   );
 };
 
-export default index;
+export default Home;

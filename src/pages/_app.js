@@ -3,8 +3,8 @@ import "./global.css";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Navbar from "@/shared/Navbar";
-import Footer from "@/shared/Footer";
+import Navbar from "../shared/Navbar";
+import Footer from "../shared/Footer";
 
 config.autoAddCss = false;
 

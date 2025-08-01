@@ -17,14 +17,15 @@ const OrderModal = ({ product, onClose }) => {
       home_address: formData.address,
       product_name: product.name,
       product_price: product.price,
+      email: 'quadribola91@gmail.com', // Required to fill {{email}} in the "To Email" field
     };
 
     emailjs
       .send(
-        'service_ihd5e6r',          // ✅ Your service ID
-        'template_bno7fei',         // ✅ Your template ID
+            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         templateParams,
-        'EyP7bV0gGzpssv2-T'         // ✅ Your public key
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
         alert('Order placed successfully!');
@@ -78,7 +79,10 @@ const OrderModal = ({ product, onClose }) => {
           >
             Cancel
           </button>
-          <button type="submit" className="px-4 py-2 bg-green-600 text-white rounded">
+          <button
+            type="submit"
+            className="px-4 py-2 bg-green-600 text-white rounded"
+          >
             Place Order
           </button>
         </div>

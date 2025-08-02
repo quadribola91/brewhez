@@ -8,21 +8,24 @@ const products = [
     name: "Colombian Brew",
     description: "Rich and aromatic from the Colombian mountains.",
     price: "$12.99",
-    image: "/images/colombian.jpg",
+    image: "/images/colom1.jpeg",
+    hoverImage: "/images/colom2.jpeg", // Add this
   },
   {
     id: 2,
     name: "Ethiopian Roast",
     description: "Fruity and bright, a classic African coffee.",
     price: "$14.50",
-    image: "/images/ethiopian.jpg",
+    image: "/images/ethio1.jpeg",
+    hoverImage: "/images/ethio2.jpeg", // Add this
   },
   {
     id: 3,
     name: "French Roast",
     description: "Dark, bold and intense.",
     price: "$13.75",
-    image: "/images/french.jpg",
+    image: "/images/french1.jpeg",
+    hoverImage: "/images/french2.jpeg", // Add this
   },
 ];
 

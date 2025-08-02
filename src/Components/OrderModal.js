@@ -7,9 +7,11 @@ const OrderModal = ({ product, onClose }) => {
     phone: '',
     address: '',
   });
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const templateParams = {
       customer_name: formData.name,
@@ -17,12 +19,12 @@ const OrderModal = ({ product, onClose }) => {
       home_address: formData.address,
       product_name: product.name,
       product_price: product.price,
-      email: 'quadribola91@gmail.com', // Required to fill {{email}} in the "To Email" field
+      email: 'quadribola91@gmail.com',
     };
 
     emailjs
       .send(
-            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         templateParams,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
@@ -34,6 +36,9 @@ const OrderModal = ({ product, onClose }) => {
       .catch((error) => {
         console.error('EmailJS Error:', error);
         alert('Error placing order.');
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -76,14 +81,42 @@ const OrderModal = ({ product, onClose }) => {
             type="button"
             onClick={onClose}
             className="px-4 py-2 bg-gray-300 rounded"
+            disabled={loading}
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="px-4 py-2 bg-green-600 text-white rounded"
+            className="px-4 py-2 bg-green-600 text-white rounded flex items-center gap-2 disabled:opacity-70"
+            disabled={loading}
           >
-            Place Order
+            {loading ? (
+              <>
+                <svg
+                  className="w-4 h-4 animate-spin"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                  ></path>
+                </svg>
+                Placing...
+              </>
+            ) : (
+              'Place Order'
+            )}
           </button>
         </div>
       </form>

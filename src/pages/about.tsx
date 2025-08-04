@@ -16,8 +16,7 @@ export default function AboutPage() {
         <section className="text-center mb-20">
           <h1 className="text-5xl font-bold mb-6 p-3 mt-4">About Our Coffee Shop</h1>
           <p className="text-lg text-gray-500 max-w-3xl mx-auto p-8">
-            We're passionate about brewing joy in every cup. Our coffee shop is more than just beans and brews—
-            it’s a community hub where people connect, relax, and recharge. Every latte, espresso, and smile is crafted with care.
+            We're passionate about brewing joy in every cup. Our coffee shop is more than just beans and brews— its a community hub where people connect, relax, and recharge. Every latte, espresso, and smile is crafted with care.
           </p>
         </section>
 

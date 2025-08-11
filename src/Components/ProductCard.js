@@ -1,3 +1,5 @@
+import { Image } from "@mui/icons-material";
+
 const ProductCard = ({ image, hoverImage, name, description, price, onOrder }) => {
   return (
     <div className="bg-white shadow-md rounded-xl overflow-hidden transition duration-300 transform hover:scale-105 hover:shadow-lg">
@@ -9,7 +11,7 @@ const ProductCard = ({ image, hoverImage, name, description, price, onOrder }) =
           className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
         />
         {/* Hover Image */}
-        <imgage
+        <Image
           src={hoverImage}
           alt={`${name} alternate`}
           className="w-full h-full object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"

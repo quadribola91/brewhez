@@ -1,6 +1,6 @@
 // pages/api/contact.js
 import dbConnect from '../api/dbConnect';
-import Contact from '../api/Contact';
+import Contact from './Contact1';
 
 export default async function handler(req, res) {
   await dbConnect();

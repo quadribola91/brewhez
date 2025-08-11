@@ -3,13 +3,13 @@ const ProductCard = ({ image, hoverImage, name, description, price, onOrder }) =
     <div className="bg-white shadow-md rounded-xl overflow-hidden transition duration-300 transform hover:scale-105 hover:shadow-lg">
       <div className="relative w-full h-48 group">
         {/* Default Image */}
-        <img
+        <imgage
           src={image}
           alt={name}
           className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
         />
         {/* Hover Image */}
-        <img
+        <imgage
           src={hoverImage}
           alt={`${name} alternate`}
           className="w-full h-full object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"

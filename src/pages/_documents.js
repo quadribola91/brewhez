@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import "@/utilities/libraries/fontawesome";
+import "@/lib/fontawesome";
 
 config.autoAddCss = false;
 
